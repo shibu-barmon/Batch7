@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace windowsform.Properties
+namespace Assignment2.Properties
 {
 
 
