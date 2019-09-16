@@ -39,21 +39,10 @@
             this.Addressbox = new System.Windows.Forms.TextBox();
             this.quantbox = new System.Windows.Forms.TextBox();
             this.save = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.orderbox = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.showlabel14 = new System.Windows.Forms.Label();
-            this.showlabel15 = new System.Windows.Forms.Label();
-            this.showlabel16 = new System.Windows.Forms.Label();
-            this.showlabel17 = new System.Windows.Forms.Label();
-            this.showlabel18 = new System.Windows.Forms.Label();
-            this.showlabel19 = new System.Windows.Forms.Label();
+            this.perorderpriceTextbox = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.showrichtextbox = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -149,21 +138,13 @@
             // save
             // 
             this.save.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.save.Location = new System.Drawing.Point(241, 283);
+            this.save.Location = new System.Drawing.Point(241, 305);
             this.save.Name = "save";
             this.save.Size = new System.Drawing.Size(130, 39);
             this.save.TabIndex = 11;
             this.save.Text = "save";
             this.save.UseVisualStyleBackColor = true;
             this.save.Click += new System.EventHandler(this.save_Click);
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(522, 66);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(239, 256);
-            this.richTextBox1.TabIndex = 12;
-            this.richTextBox1.Text = "";
             // 
             // orderbox
             // 
@@ -178,130 +159,32 @@
             this.orderbox.Size = new System.Drawing.Size(223, 21);
             this.orderbox.TabIndex = 13;
             // 
-            // label7
+            // perorderpriceTextbox
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(540, 78);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(38, 13);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "Name:";
+            this.perorderpriceTextbox.Location = new System.Drawing.Point(226, 279);
+            this.perorderpriceTextbox.Name = "perorderpriceTextbox";
+            this.perorderpriceTextbox.Size = new System.Drawing.Size(223, 20);
+            this.perorderpriceTextbox.TabIndex = 9;
+            this.perorderpriceTextbox.TextChanged += new System.EventHandler(this.quantbox_TextChanged);
             // 
-            // label8
+            // label15
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(540, 165);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(48, 13);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "Address:";
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(87, 283);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(111, 16);
+            this.label15.TabIndex = 5;
+            this.label15.Text = "per order price";
             // 
-            // label9
+            // showrichtextbox
             // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(540, 165);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(0, 13);
-            this.label9.TabIndex = 16;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(540, 120);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(66, 13);
-            this.label10.TabIndex = 17;
-            this.label10.Text = "Contact NO:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(547, 212);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(36, 13);
-            this.label11.TabIndex = 18;
-            this.label11.Text = "Order:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(542, 249);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(49, 13);
-            this.label12.TabIndex = 19;
-            this.label12.Text = "Quantity:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(536, 283);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(50, 13);
-            this.label13.TabIndex = 20;
-            this.label13.Text = "Total Bill:";
-            // 
-            // showlabel14
-            // 
-            this.showlabel14.AutoSize = true;
-            this.showlabel14.BackColor = System.Drawing.Color.White;
-            this.showlabel14.Location = new System.Drawing.Point(609, 78);
-            this.showlabel14.Name = "showlabel14";
-            this.showlabel14.Size = new System.Drawing.Size(0, 13);
-            this.showlabel14.TabIndex = 21;
-            // 
-            // showlabel15
-            // 
-            this.showlabel15.AutoSize = true;
-            this.showlabel15.BackColor = System.Drawing.Color.White;
-            this.showlabel15.Location = new System.Drawing.Point(612, 120);
-            this.showlabel15.Name = "showlabel15";
-            this.showlabel15.Size = new System.Drawing.Size(0, 13);
-            this.showlabel15.TabIndex = 22;
-            // 
-            // showlabel16
-            // 
-            this.showlabel16.AutoSize = true;
-            this.showlabel16.BackColor = System.Drawing.Color.White;
-            this.showlabel16.Location = new System.Drawing.Point(612, 165);
-            this.showlabel16.Name = "showlabel16";
-            this.showlabel16.Size = new System.Drawing.Size(0, 13);
-            this.showlabel16.TabIndex = 23;
-            this.showlabel16.Click += new System.EventHandler(this.showlabel16_Click);
-            // 
-            // showlabel17
-            // 
-            this.showlabel17.AutoSize = true;
-            this.showlabel17.BackColor = System.Drawing.Color.White;
-            this.showlabel17.Location = new System.Drawing.Point(615, 212);
-            this.showlabel17.Name = "showlabel17";
-            this.showlabel17.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.showlabel17.Size = new System.Drawing.Size(0, 13);
-            this.showlabel17.TabIndex = 24;
-            // 
-            // showlabel18
-            // 
-            this.showlabel18.AutoSize = true;
-            this.showlabel18.BackColor = System.Drawing.Color.White;
-            this.showlabel18.Location = new System.Drawing.Point(618, 249);
-            this.showlabel18.Name = "showlabel18";
-            this.showlabel18.Size = new System.Drawing.Size(0, 13);
-            this.showlabel18.TabIndex = 25;
-            // 
-            // showlabel19
-            // 
-            this.showlabel19.AutoSize = true;
-            this.showlabel19.BackColor = System.Drawing.Color.White;
-            this.showlabel19.Location = new System.Drawing.Point(615, 283);
-            this.showlabel19.Name = "showlabel19";
-            this.showlabel19.Size = new System.Drawing.Size(0, 13);
-            this.showlabel19.TabIndex = 26;
+            this.showrichtextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.showrichtextbox.Location = new System.Drawing.Point(522, 66);
+            this.showrichtextbox.Name = "showrichtextbox";
+            this.showrichtextbox.Size = new System.Drawing.Size(250, 317);
+            this.showrichtextbox.TabIndex = 12;
+            this.showrichtextbox.Text = "";
             // 
             // coffeshop
             // 
@@ -309,26 +192,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Peru;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.showlabel19);
-            this.Controls.Add(this.showlabel18);
-            this.Controls.Add(this.showlabel17);
-            this.Controls.Add(this.showlabel16);
-            this.Controls.Add(this.showlabel15);
-            this.Controls.Add(this.showlabel14);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.orderbox);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.showrichtextbox);
             this.Controls.Add(this.save);
+            this.Controls.Add(this.perorderpriceTextbox);
             this.Controls.Add(this.quantbox);
             this.Controls.Add(this.Addressbox);
             this.Controls.Add(this.Contacttextbox);
             this.Controls.Add(this.nametextbox);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -337,6 +209,7 @@
             this.Controls.Add(this.label1);
             this.Name = "coffeshop";
             this.Text = "coffeshop";
+            this.Load += new System.EventHandler(this.coffeshop_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -355,21 +228,10 @@
         private System.Windows.Forms.TextBox Addressbox;
         private System.Windows.Forms.TextBox quantbox;
         private System.Windows.Forms.Button save;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.ComboBox orderbox;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label showlabel14;
-        private System.Windows.Forms.Label showlabel15;
-        private System.Windows.Forms.Label showlabel16;
-        private System.Windows.Forms.Label showlabel17;
-        private System.Windows.Forms.Label showlabel18;
-        private System.Windows.Forms.Label showlabel19;
+        private System.Windows.Forms.TextBox perorderpriceTextbox;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.RichTextBox showrichtextbox;
     }
 }
 

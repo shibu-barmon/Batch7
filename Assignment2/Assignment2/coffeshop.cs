@@ -12,6 +12,7 @@ namespace Assignment2
 {
     public partial class coffeshop : Form
     {
+        int index = 0;
         public coffeshop()
         {
             InitializeComponent();
@@ -19,38 +20,70 @@ namespace Assignment2
 
         private void save_Click(object sender, EventArgs e)
         {
-            var name = nametextbox.Text;
-            int number  = Convert.ToInt32(Contacttextbox.Text);
-            var address = Addressbox.Text;
-            var order = orderbox.Text;
-            int quantity= Convert.ToInt32(quantbox.Text);
-            int amount;
-            if (order == "Black")
+            string[] name = new string[100];
+            string[] number = new string[50];
+            string[] address = new string[100];
+            string[] order = new string[20];
+            int[] quantity = new int[50];
+            int[] perorderprice = new int[50];
+            int[] totalbill = new int[50];
+
+            name[index] = nametextbox.Text;
+            number[index] = Contacttextbox.Text;
+            address[index] = Addressbox.Text;
+            quantity[index] = Convert.ToInt32(quantbox.Text);
+            perorderprice[index] = Convert.ToInt32(perorderpriceTextbox.Text);
+            order[index] = (orderbox.Text);
+
+
+            if (nametextbox.Text == null || Contacttextbox.Text == null || Addressbox.Text == null ||
+               quantbox.Text == null || perorderpriceTextbox.Text == null)
             {
-                amount = 120;
+                MessageBox.Show("You cannot keep it blank.");
             }
-            else if (order == "Cold")
-            {
-                amount = 100;
-            }
-            else if (order == "Hot")
-            {
-                amount = 90;
-            }
-           
             else
             {
-                amount = 80;
+                MessageBox.Show("Sucessfully inserted an order.");
             }
 
-            MessageBox.Show("Data Saved");
-            showlabel14.Text = name;
-            showlabel15.Text = number.ToString();
-            showlabel16.Text = address;
-            showlabel17.Text = order;
-            showlabel18.Text = quantity.ToString();
-            string result = Convert.ToString(quantity * amount);
-            showlabel19.Text = result;
+            if (orderbox.Text == null)
+            {
+                MessageBox.Show("Selct item.");
+            }
+            else if (orderbox.Text == "Black")
+            {
+                totalbill[index] = quantity[index] * perorderprice[index];
+                showrichtextbox.Text += "Customer Name: " + name[index] + "\n" + "Contact No.: " + number[index] + "\n" +
+                    "Address: " + address[index] + "\n" + "Odered item: " + order[index] + "\n" + "Quantity: " + quantity[index] +
+                    "\n" + "Price Per " + order[index] + ": " + perorderprice[index] + "\n" + "Total Price: " + totalbill[index] + "\n" + "\n";
+            }
+            else if (orderbox.Text == "Cold")
+            {
+                totalbill[index] = quantity[index] * perorderprice[index];
+                showrichtextbox.Text += "Customer Name: " + name[index] + "\n" + "Contact No.: " + number[index] + "\n" +
+                    "Address: " + address[index] + "\n" + "Odered item: " + order[index] + "\n" + "Quantity: " + quantity[index] +
+                    "\n" + "Price Per " + order[index] + ": " + perorderprice[index] + "\n" + "Total Price: " + totalbill[index] + "\n" + "\n";
+
+            }
+            else if (orderbox.Text == "Hot")
+            {
+
+                totalbill[index] = quantity[index] * perorderprice[index];
+                showrichtextbox.Text += "Customer Name: " + name[index] + "\n" + "Contact No.: " + number[index] + "\n" +
+                    "Address: " + address[index] + "\n" + "Odered item: " + order[index] + "\n" + "Quantity: " + quantity[index] +
+                    "\n" + "Price Per " + order[index] + ": " + perorderprice[index] + "\n" + "Total Price: " + totalbill[index] + "\n" + "\n";
+
+            }
+            else if (orderbox.Text == "Regular")
+            {
+                totalbill[index] = quantity[index] * perorderprice[index];
+                showrichtextbox.Text += "Customer Name: " + name[index] + "\n" + "Contact No.: " + number[index] + "\n" +
+                    "Address: " + address[index] + "\n" + "Odered item: " + order[index] + "\n" + "Quantity: " + quantity[index] +
+                    "\n" + "Price Per " + order[index] + ": " + perorderprice[index] + "\n" + "Total Price: " + totalbill[index] + "\n" + "\n";
+
+            }
+            index++;
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -64,6 +97,11 @@ namespace Assignment2
         }
 
         private void showlabel16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void coffeshop_Load(object sender, EventArgs e)
         {
 
         }
