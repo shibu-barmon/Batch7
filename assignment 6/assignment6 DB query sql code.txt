@@ -1,0 +1,35 @@
+SELECT * FROM items
+use coffeeshop
+DROP TABLE items
+
+CREATE TABLE items(
+itemID INT IDENTITY(1,1),
+itemName VARCHAR(50),
+itemPrice FLOAT,
+)
+
+UPDATE items
+SET
+Name='Black',
+Price=100
+WHERE ID=2;
+
+CREATE TABLE Customers (
+CustomerId INT IDENTITY(1, 1),
+CustomerName VARCHAR(30) UNIQUE,
+Contact VARCHAR(11) UNIQUE,
+Address VARCHAR(MAX));
+DROP TABLE Customers
+
+INSERT INTO Customers(CustomerName, Contact, Address) VALUES ('shibu',  '01315911950', 'SAGOPTA');
+select * from Customers
+
+CREATE TABLE Orders (
+OrderId INT IDENTITY(1,1),
+itemName VARCHAR(30) UNIQUE,
+Quantity INT,
+TotalPrice FLOAT,
+CustomerName VARCHAR(30))
+
+select * from Orders
+INSERT INTO Orders(itemName, Quantity, TotalPrice, CustomerName) VALUES ('BLACK COFFEE',1, 120.0, 'KARIM')
