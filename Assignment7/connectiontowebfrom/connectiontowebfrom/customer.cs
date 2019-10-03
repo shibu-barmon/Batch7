@@ -20,38 +20,7 @@ namespace connectiontowebfrom
 
         private void customerAddBtn_Click(object sender, EventArgs e)
         {
-            try
-            {
-                //Connection
-                string connectionString = @"Server=DESKTOP-R7PQERG\SQLEXPRESS;Database=coffeeshop;Integrated Security=true";
-                SqlConnection SqlConnection = new SqlConnection(connectionString);
-
-                //Command
-                string commandString = @"INSERT INTO Customers(CustomerName, Contact, Address) VALUES ('" + customerNametextbox.Text + "', '" + contacttextbox.Text + "', '" + addresstextbox.Text + "')";
-                SqlCommand sqlCommand = new SqlCommand(commandString, SqlConnection);
-
-                //Execute
-                SqlConnection.Open();
-
-                int isExecuted = sqlCommand.ExecuteNonQuery();
-                if (isExecuted > 0)
-                {
-                    MessageBox.Show("Inserted successfully.");
-                }
-                else
-                    MessageBox.Show("Not inserted");
-
-                customerIdtextbox.Text = "";
-                customerNametextbox.Text = "";
-                contacttextbox.Text = "";
-                addresstextbox.Text = "";
-                SqlConnection.Close();
-            }
             
-            catch (Exception exception)
-            {
-                MessageBox.Show(exception.Message);
-            }
         }
 
         private void customerShowBtn_Click(object sender, EventArgs e)
@@ -79,10 +48,7 @@ namespace connectiontowebfrom
                 else
                     MessageBox.Show("Data not found");
 
-                customerIdtextbox.Text = "";
-                customerNametextbox.Text = "";
-                contacttextbox.Text = "";
-                addresstextbox.Text = "";
+           
                 SqlConnection.Close();
             }
             catch (Exception exception)
@@ -114,10 +80,7 @@ namespace connectiontowebfrom
                 else
                     MessageBox.Show("Not deleted");
 
-                customerIdtextbox.Text = "";
-                customerNametextbox.Text = "";
-                contacttextbox.Text = "";
-                addresstextbox.Text = "";
+              
                 SqlConnection.Close();
             }
             catch (Exception exception)
@@ -153,10 +116,7 @@ namespace connectiontowebfrom
                 else
                     MessageBox.Show("Not updated");
 
-                customerIdtextbox.Text = "";
-                customerNametextbox.Text = "";
-                contacttextbox.Text = "";
-                addresstextbox.Text = "";
+                
                 SqlConnection.Close();
             }
             catch (Exception exception)
@@ -189,15 +149,45 @@ namespace connectiontowebfrom
                 else
                     MessageBox.Show("Data not found");
 
-                customerIdtextbox.Text = "";
-                customerNametextbox.Text = "";
-                contacttextbox.Text = "";
-                addresstextbox.Text = "";
+              
                 SqlConnection.Close();
             }
             catch (Exception exception)
             {
                 MessageBox.Show(exception.Message);
+            }
+            private bool customerAdd(string CustomerName,int Contact, string Address)
+            {
+                bool isAdded false;
+                try
+                {
+                    //Connection
+                    string connectionString = @"Server=DESKTOP-R7PQERG\SQLEXPRESS;Database=coffeeshop;Integrated Security=true";
+                    SqlConnection SqlConnection = new SqlConnection(connectionString);
+
+                    //Command
+                    string commandString = @"INSERT INTO Customers(CustomerName, Contact, Address) VALUES ('" + CustomerName+ "', '" + Contact + "', '" + Address + "')";
+                    SqlCommand sqlCommand = new SqlCommand(commandString, SqlConnection);
+
+                    //Execute
+                    SqlConnection.Open();
+
+                    int isExecuted = sqlCommand.ExecuteNonQuery();
+                    if (isExecuted > 0)
+                    {
+                        MessageBox.Show("Inserted successfully.");
+                    }
+                    else
+                        MessageBox.Show("Not inserted");
+
+
+                    SqlConnection.Close();
+                }
+
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message);
+                }
             }
         }
     }
